@@ -1,0 +1,29 @@
+create table users_info(
+    id int primary key auto_increment,
+    name varchar(30),
+    email varchar(30),
+    password varchar(100),
+    role varchar(20)
+);
+
+
+create table accesories_type(
+    id int primary key auto_increment,
+    name varchar(100)
+);
+
+insert into accesories_type (name)
+values 
+('Shoes'),
+('Dress'),
+('Gadget');
+
+create table companies(
+    id int primary key auto_increment,
+    name varchar(100),
+    price int(255),
+    company_id int,
+    images varchar(255)
+    FOREIGN KEY (company_id) REFERENCES accesories_type(id)
+);
+
